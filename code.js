@@ -12,7 +12,8 @@ function graphSignature(graph) {
     const vertices = Object.keys(graph).sort();
     for (const vertex of vertices) {
         const edges = graph[vertex];
-        const sortedEdges = [...edges].sort((a, b) => a - b);
+        const sortedEdges = [...edges].sort();
+        signature.push(vertex);
         signature.push(edges.length);
         signature.push(...sortedEdges);
     }
