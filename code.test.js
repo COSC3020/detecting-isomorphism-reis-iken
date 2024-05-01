@@ -33,7 +33,7 @@ const examples = [
 
 function testExamples() {
     for (let example of examples) {
-        const result = are_isomorphic(example.graph1, example.graph2);
+        const result = areIsomorphic(example.graph1, example.graph2); // corrected function name
         if (result !== example.expected) {
             return false;
         }
