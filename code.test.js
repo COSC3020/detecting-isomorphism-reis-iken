@@ -1,5 +1,7 @@
-let fs = require('fs');
-let jsc = require('jsverify');
+const jsc = require('jsverify');
+const assert = require('assert');
+const fs = require('fs');
+
 eval(fs.readFileSync('code.js')+'');
 
 const examples = [
@@ -32,13 +34,10 @@ const examples = [
 ];
 
 function testExamples() {
-    for (let example of examples) {
-        const result = areIsomorphic(example.graph1, example.graph2); // corrected function name
-        if (result !== example.expected) {
-            return false;
-        }
+    for (const example of examples) {
+        const result = areIsomorphic(example.graph1, example.graph2);
+        assert.strictEqual(result, example.expected);
     }
-    return true;
 }
 
-jsc.assert(testExamples());
+testExamples();
