@@ -9,9 +9,10 @@ function areIsomorphic(graph1, graph2) {
 
 function graphSignature(graph) {
     const signature = [];
-    for (const vertex of graph) {
+    for (const vertex of Object.values(graph)) {
+        const sortedVertex = [...vertex].sort((a, b) => a - b);
         signature.push(vertex.length);
-        signature.push(...vertex.sort((a, b) => a - b));
+        signature.push(...sortedVertex);
     }
     return signature.sort().join('');
 }
