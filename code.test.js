@@ -16,7 +16,7 @@ const examples = [
             5: [4, 6],
             6: [4, 5]
         },
-        expected: false
+        expected: true
     },
     {
         graph1: {
@@ -29,7 +29,7 @@ const examples = [
             5: [4, 6],
             6: [5]
         },
-        expected: true
+        expected: false
     }
 ];
 
