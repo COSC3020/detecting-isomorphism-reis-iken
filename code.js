@@ -1,5 +1,5 @@
 function areIsomorphic(graph1, graph2) {
-    if (graph1.length !== graph2.length) return false;
+    if (Object.keys(graph1).length !== Object.keys(graph2).length) return false;
 
     const signature1 = graphSignature(graph1);
     const signature2 = graphSignature(graph2);
@@ -9,10 +9,12 @@ function areIsomorphic(graph1, graph2) {
 
 function graphSignature(graph) {
     const signature = [];
-    for (const vertex of Object.values(graph)) {
-        const sortedVertex = [...vertex].sort((a, b) => a - b);
-        signature.push(vertex.length);
-        signature.push(...sortedVertex);
+    const vertices = Object.keys(graph).sort();
+    for (const vertex of vertices) {
+        const edges = graph[vertex];
+        const sortedEdges = [...edges].sort((a, b) => a - b);
+        signature.push(edges.length);
+        signature.push(...sortedEdges);
     }
-    return signature.sort().join('');
+    return signature.join('');
 }
