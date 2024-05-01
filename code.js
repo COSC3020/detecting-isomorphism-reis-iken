@@ -1,10 +1,17 @@
-function are_isomorphic(graph1, graph2) {
-    let vertices1 = Object.keys(graph1);
-    let vertices2 = Object.keys(graph2);
-    if (vertices1.length !== vertices2.length) {
-        return false;
+function areIsomorphic(graph1, graph2) {
+    if (graph1.length !== graph2.length) return false;
+
+    const signature1 = graphSignature(graph1);
+    const signature2 = graphSignature(graph2);
+
+    return signature1 === signature2;
+}
+
+function graphSignature(graph) {
+    const signature = [];
+    for (const vertex of graph) {
+        signature.push(vertex.length);
+        signature.push(...vertex.sort((a, b) => a - b));
     }
-    let sortedNeighbors1 = vertices1.map(v => graph1[v].sort().join(',')).sort();
-    let sortedNeighbors2 = vertices2.map(v => graph2[v].sort().join(',')).sort();
-    return sortedNeighbors1.join('-') === sortedNeighbors2.join('-');
+    return signature.sort().join('');
 }
