@@ -11,7 +11,7 @@ let testCases = [
     {
         graph1: [ [1], [0, 2], [1, 3], [2], ],
         graph2: [ [1, 2], [0], [0, 3], [2], ],
-        expectResult: false,
+        expectResult: true,
     },
   
     {
