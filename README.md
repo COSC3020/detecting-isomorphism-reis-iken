@@ -19,4 +19,6 @@ What is the worst-case big $\Theta$ time complexity of your algorithm?
 
 **MY ANSWER:**
 
-Since my code sort of backtracks to find all possible mappings between nodes in the graphs, the worst case is that all mappings will be checked. This gives us a time complexity of $\Theta(n!)$
+Since my code sort of backtracks to find all possible mappings between nodes in the graphs, the worst case is that all mappings will be checked. And for each mapping, we make n comparisons.
+
+This gives us a time complexity of $\Theta(n * n!)$
