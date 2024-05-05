@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/NYae883E)
 # Graph Isomorphism
 
 Devise an algorithm to determine whether two given graphs are isomorphic or not.
@@ -15,3 +16,9 @@ the function and run automatically when you commit through a GitHub action.
 ## Runtime Analysis
 
 What is the worst-case big $\Theta$ time complexity of your algorithm?
+
+**MY ANSWER:**
+
+Since my code sort of backtracks to find all possible mappings between nodes in the graphs, the worst case is that all mappings will be checked. And for each mapping, we make n comparisons.
+
+This gives us a time complexity of $\Theta(n * n!)$
